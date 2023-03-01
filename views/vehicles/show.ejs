@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+<br>
+<section id="show-page">
+    <h3>Selected Vehicle:</h3>
+    <div><%= vehicle.year %></div>
+    <div><%= vehicle.color %></div>
+    <div><%= vehicle.make %></div>
+   <div><%= vehicle.model %></div>
+    <br>
+   <div><%= vehicle.services %></div>
+   
+  </section>
+
+  <br>
+  <% if (user) { %>
+    <section id="report-form">
+    <h3>Add Detailed Issues ⬇️</h3>
+  <form id="add-report-form" method="POST"
+    action="/vehicles/<%= vehicle._id %>/reports">
+    <label>Report:</label>
+    <textarea name="report"></textarea>
+    <br>
+    <input type="submit" value="Add Report">
+  </form>
+<% } %>
+
+<% if (vehicle.reports.length) { %>
+  <table>
+    <!-- <thead>
+      <tr>
+        <th>User</th>
+        <th>Report</th>
+      </tr>
+    </thead> -->
+    <tbody id="report-table">
+      <% reports.forEach(function(r) { %>
+        <tr>
+          <td class="report-user"><img alt="avatar" src="<%= r.user.avatar %>" referrerpolicy="no-referrer"> <%= r.userName %></td>
+          <td><%= r.report %></td>
+          <td>
+            <% if (user?._id.equals(r.user)) { %>
+              <form action="/reports/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </section>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reports Yet..</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

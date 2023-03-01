@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+<br>
+<aside>
+<h2>Add your Vehicle</h2>
+<form action="/vehicles" method="POST">
+<label>Year:
+    <input type="text" name="year">
+</label><br>
+<label>Make:
+    <input type="text" name="make">
+</label><br>
+<label>Model:
+    <input type="text" name="model">
+</label><br>
+<label>Color:
+    <input type="text" name="color">
+</label><br><br>
+<label>Services:
+    <select name="services">
+        <option value="Auto Repair">Auto Repair</option>
+      <option value="Alignment">Alignment</option>
+      <option value="Battery">Battery</option>
+      <option value="Oil Change">Oil Change</option>
+      <option value="Tires">Tires</option>
+    </select>
+</label><br><br>
+<label>Driveable:
+    <input type="checkbox" name="driveable" checked>
+</label><br><br>
+<button type="submit">Submit Your Ride 🚗💨</button>
+</form>
+</aside>
+<%- include('../partials/footer') %>

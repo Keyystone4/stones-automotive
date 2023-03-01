@@ -1,8 +1,133 @@
 body {
+  background: url('https://i.imgur.com/5Y6WVi0.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Copperplate;
+  font-size: 35px;
+  background-color: black;
+  color: rgb(255, 98, 0);
+  text-align: center;
+  height: 70vh;
+  margin-bottom: 70px;
+}
+
+img {
+  width: 30px;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  margin-top: left;
+  
+}
+
+a:hover {
+  transform: scale(0.9);
+  color:rgb(255, 98, 0);
+}
+
+nav {
+  font-family: copperplate;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0,0,0,.4);
+  
+  
+}
+
+h1 {
+  margin: auto;
+  font-size: 10vh;
+  color: rgb(255, 98, 0);;
+}
+
+h2 {
+  font-size: 70px;
+}
+
+td {
+  color: rgb(255, 98, 0);
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+}
+
+table {
+  display: inline-block;
+  text-align: center;
+}
+
+input {
+  border-radius: 100px;
+  border-color: rgb(255, 98, 0);
+  border-style: solid;
+}
+
+input:hover {
+  color:rgb(255, 98, 0);
+  background-color: black;
+}
+
+button {
+  border-radius: 10px;
+  border-color: rgb(255, 98, 0);
+  color: black;
+}
+
+button:hover {
+  color:rgb(255, 98, 0);
+  background-color: black;
+}
+
+#add-review-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+
+#add-review-form input[type="submit"] {
+  width: 8rem;
+  grid-column: 2 / 3;
+  margin-bottom: 2rem;
+}
+
+aside {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 100px;
+  border-color: rgb(255, 98, 0);
+  border-style: solid;
+  margin: 90px;
+}
+
+section {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 100px;
+  border-color: rgb(255, 98, 0);
+  border-style: solid;
+}
+
+#show-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#report-form {
+  text-align: center;
+  color: white;
+}
+
+#report-table {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 50px;
 }

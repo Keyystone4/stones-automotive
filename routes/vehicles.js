@@ -4,8 +4,8 @@ var vehiclesCtrl = require('../controllers/vehicles');
 
 router.get('/new', vehiclesCtrl.new);
 router.get('/', vehiclesCtrl.index);
-router.get('/:id', vehiclesCtrl.show);
 router.post('/', vehiclesCtrl.create);
-router.delete('/vehicles/:id', vehiclesCtrl.delete);
+router.get('/:id', vehiclesCtrl.show);
+router.delete('/:id', vehiclesCtrl.delete);
 
 module.exports = router;

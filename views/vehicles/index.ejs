@@ -15,6 +15,7 @@
     <tbody class="container">
       <!-- Write the line of EJS to iterate over movies using forEach -->
       <% vehicles.forEach(function(v) { %>
+        <div class="card">
         <tr>
             <td><%= v.year %></td>
             <td><%= v.make %></td>
@@ -27,8 +28,20 @@
                 <td><%= v.driveable ? 'Yes' : 'No'  %></td>
                 <br>
                 <td><a href="/vehicles/<%= v._id %>">Reports</a></td>
-                <a href="/vehicles" type="submit" >🗑️</a>
+                <td>
+                    <% if (user) { %>
+                    <form action="/vehicles/<%= v._id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button class="trash" type="submit">🗑️</button>
+                  </form>
+                  <% } %>
+                </td>
+               
+                
+                  
             </tr>
+            
+            </div>
       <!-- Close the forEach using EJS here -->
       <% }); %>
     </tbody>

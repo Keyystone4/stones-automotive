@@ -9,23 +9,9 @@ module.exports = {
     delete: deleteVehicle
 };
 
-function deleteVehicle(req, res) {
-    Vehicle.deleteOne(req.params.id);
-    console.log(req.params.id);
+async function deleteVehicle(req, res, next) {
+    await Vehicle.deleteOne({_id:req.params.id});
     res.redirect('/vehicles');
-
-    // Vehicle.findOne({
-    //     'vehicles._id': req.body.id,
-    //     'vehicles.user': req.user._id
-    //   }).then(function(vehicle) {
-    //     if (!vehicle) return res.redirect('/vehicles');
-    //     vehicle.remove(req.body);
-    //     vehicle.save().then(function() {
-    //       res.redirect('/vehicles');
-    //     }).catch(function(err) {
-    //       return next(err);
-    //     });
-    //   });
 }
 
 async function show(req, res) {

@@ -48,6 +48,8 @@ h1 {
 
 h2 {
   font-size: 70px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
 }
 
 td {
@@ -130,4 +132,12 @@ section {
 .container {
   display: flex;
   gap: 50px;
+}
+
+.card {
+display: flex;
+}
+
+.trash {
+  position: relative;
 }

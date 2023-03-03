@@ -38,9 +38,11 @@
           <td class="report-user"><img alt="avatar" src="<%= r.user.avatar %>" referrerpolicy="no-referrer"> <%= r.userName %></td>
           <td><%= r.report %></td>
           <td>
-            <% if (user?._id.equals(r.user)) { %>
-              <form action="/reports/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">DELETE</button>
+            <% if (user) { %>
+              <form action="/<%= vehicle._id %>/reports/<%= r._id %>?_method=PUT" method="POST">
+                <input name="report" value="<%= r.report %>">
+                <button type="submit">✎</button>
+              </form>
             </form>
         </section>
             <% } %>

@@ -3,7 +3,27 @@ const Report = require('../models/report');
 
 
 module.exports = {
-    create
+    create,
+    edit,
+    update
+}
+
+function update(req, res) {
+    console.log(req.params);
+    Report.findById(req.params.id, function(err, report) {
+        console.log('hello', report);
+        report.report = req.body.report;
+        report.save(function(err) {
+          res.redirect(`/vehicles/${req.params.vehicleId}`);
+        });
+      });
+}
+
+function edit(req, res) {
+    Vehicle.findOne({'reports._id': req.params.id}, function(err, vehicle) {
+        const report = vehicle.report.id(req.params.id);
+        res.render('reports/edit', {report});
+      });
 }
 
  async function create(req, res) {

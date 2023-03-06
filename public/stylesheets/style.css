@@ -42,14 +42,16 @@ nav {
 
 h1 {
   margin: auto;
-  font-size: 10vh;
-  color: rgb(255, 98, 0);;
+  font-size: 15vh;
+  color: rgb(255, 98, 0);
+  background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 h2 {
-  font-size: 70px;
-  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 10vh;
   border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 td {

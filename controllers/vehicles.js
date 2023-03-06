@@ -9,30 +9,22 @@ module.exports = {
     delete: deleteVehicle
 };
 
-async function deleteVehicle(req, res, next) {
-    Vehicle.findOne({
-        'vehicles._id': req.body.id,
-        'vehicles.user': req.user._id
-      }).then(function(vehicle) {
-        if (!vehicle) return res.redirect('/vehicles');
-        vehicle.remove(req.body);
-        vehicle.save().then(function() {
-          res.redirect('/vehicles');
-        }).catch(function(err) {
-          return next(err);
-        });
-      });
-    await Vehicle.deleteOne({_id:req.params.id});
+function deleteVehicle(req, res) {
+        Vehicle.findOneAndDelete(
+          {_id: req.params.id, userRecommending: 
+            req.user._id}, 
+          function(err) {
+            res.redirect('/vehicles');
+          }
+        );
+      }
     
-}
-
 async function show(req, res) {
     let vehicle = await Vehicle.findOne({'_id': req.params.id})
     .populate('reports')
     .exec(function(err, vehicle) {
         Report.populate(vehicle.reports, 
             { path: 'user' }, function(err, reports) {
-                console.log(reports);
             res.render('vehicles/show', { vehicle, reports});
         });
     });

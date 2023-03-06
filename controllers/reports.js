@@ -9,9 +9,7 @@ module.exports = {
 }
 
 function update(req, res) {
-    console.log(req.params);
     Report.findById(req.params.id, function(err, report) {
-        console.log('hello', report);
         report.report = req.body.report;
         report.save(function(err) {
           res.redirect(`/vehicles/${req.params.vehicleId}`);

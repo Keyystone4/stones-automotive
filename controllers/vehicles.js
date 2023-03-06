@@ -10,14 +10,14 @@ module.exports = {
 };
 
 function deleteVehicle(req, res) {
-        Vehicle.findOneAndDelete(
-          {_id: req.params.id, userRecommending: 
-            req.user._id}, 
-          function(err) {
-            res.redirect('/vehicles');
-          }
-        );
+    Vehicle.findOneAndDelete(
+        {_id: req.params.id, userRecommending: 
+        req.user._id}, 
+        function(err) {
+        res.redirect('/vehicles');
       }
+   );
+}
     
 async function show(req, res) {
     let vehicle = await Vehicle.findOne({'_id': req.params.id})
